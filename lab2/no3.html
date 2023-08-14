@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-form">
+      <h2>เข้าสู่ระบบ</h2>
+      <form id="loginForm">
+        <table>
+          <tr>
+            <td><label for="username">Username:</label></td>
+            <td><input type="text" id="username" name="username" required ></td>
+          </tr>
+          <tr>
+            <td><label for="password">Password:</label></td>
+            <td><input type="password" id="password" name="password" required></td>
+          </tr>
+          <tr>
+            <td colspan="2"><label for="confirmCode">
+              กรุณาพิมพ์ตามตัวเลขที่ปรากฏ: 
+              <br>
+              1559
+            </label>
+            <br>
+            <input type="number" id="confirmCode" name="confirmCode" required></td>
+          </tr>
+        </table>
+
+        <button type="submit" id="loginButton" style="margin-top: 10px; border: none; background-color: white;">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtxmudkDjXtxvt14u0V7lwdplKxmKLSLCT5MpiDHcyg4L83ILl_zyDuu9o5V2j8_LZurU&usqp=CAU" 
+          alt="Login" style="width: 80px">
+        </button>
+      </form>
+    </div>
+
+    <script>
+      document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var confirmCode = document.getElementById("confirmCode").value;
+        if (confirmCode === "1559") {
+          window.location.href = "no3login.html";
+        } else {
+          alert("กรุณากรอก Confirm Code ให้ถูกต้อง");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .con{
+            margin: auto;
+            width: 60%;
+            border: 3px solid black;
+        }
+        .con h1{
+            margin-left: 30px;
+        }
+        .form1{
+            margin: auto;
+            width: 95%;
+        }
+        .div1{
+            margin-top: 40px;
+            margin-bottom: 40px;
+            border: 3px solid black;
+        }
+        .h2-top1{
+            text-align: center;
+            margin-top: -20px;
+            max-width: 140px;
+            background-color: white;
+        }
+        .h2-top2{
+            text-align: center;
+            margin-top: -20px;
+            max-width: 180px;
+            background-color: white;
+        }
+        .h2-top3{
+            text-align: center;
+            margin-top: -20px;
+            max-width: 220px;
+            background-color: white;
+        }
+        .div1 h2{
+            margin-left: 20px; 
+        }
+        select,textarea,input{
+            margin-top: 0px;
+            margin-left: 20px;
+            font-size: 22px;
+        }
+        .zipCode{
+            width: 80px;
+        }
+        input:checked{
+            font-size: 50px;
+        }
+        .amount{
+            width: 80px;
+        }
+        .like{
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="con">
+        <h1>แบบฟอร์มจองทัวร์</h1>
+        <form class="form1" action="">
+            <div class="div1">
+                <h2 class="h2-top1">ข้อมูลทั่วไป</h2>
+        
+                    <h2>ชื่อ-สกุล:</h2>
+                    <input 
+                        type="text"
+                        name="fullname"
+                        placeholder="กรอกชื่อ-สกุล"
+                        pattern="[A-Za-z]"
+                    >
+                    *
+                    <h2>Email:</h2>
+                    <input 
+                        type="email"
+                        name="email"
+                        
+                    >
+                    *
+                    <h2>โทรศัพท์:</h2>
+                    <input 
+                        type="text"
+                        name="phone_number"
+                        value="+66"
+                        pattern="+66[0-9]{8}"
+                    >
+                    *
+                    <h2>ที่อยู่:</h2>
+                    <textarea 
+                        name="address" 
+                        id="address" 
+                        cols="30" 
+                        rows="2">
+                    </textarea>
+        
+                    <h2>รหัสไปรษณีย์:         
+                        <input 
+                            class="zipCode"
+                            type="text"
+                            name="zip_code"
+                            pattern="[0-9]{5}"
+                        >
+                    </h2>
+        
+                    <h2>รูปผู้จอง 
+                        <input 
+                            type="file"
+                            name="file_img"
+                        >
+                    </h2>
+            </div>
+    
+            <div class="div1">
+                <h2 class="h2-top2">ข้อมูลเข้าสู่ระบบ</h2>
+    
+                <h2>Username:</h2>
+                <input 
+                    type="text"
+                    name="username"
+                    pattern="[A-Za-z0-9_]{8}"
+                >
+                <br>
+                <h2><i>ประกอบด้วยตัวเลข ตัวอักษร หรือ _ ตั่งแต่ 8 ตัวขึ้นไป</i></h2>
+    
+                <h2>Password:</h2>
+                <input 
+                    type="password"
+                    name="password"
+                    pattern="{8}"
+                >
+                <br>
+                <h2><i>ประกอบด้วยตัวอักษรอะไรก็ได้ 8 ตัวขึ้นไป</i></h2>
+            </div>
+            
+            <div class="div1">
+                <h2 class="h2-top3">ข้อมูลทัวร์ที่ต้องการ</h2>
+                
+                <h2>แพ๊คเก็จทัวร์:
+                    <select name="country">
+                        <option value="japan">ญี่ปุ่น</option>
+                        <option value="italy">อิตาลี</option>
+                        <option value="germany">เยอรมนี </option>
+                        <option value="austria">ออสเตรีย </option>
+                        <option value="canada">แคนาดา</option>
+                    </select>
+                </h2>
+    
+                <h2>วันที่ต้องเดินทาง:
+                    <input 
+                        type="date"
+                        name="date"
+                    >
+                </h2>
+    
+                <h2>จำนวนผู้เดินทาง:
+                    <input 
+                        class="amount"
+                        type="text"
+                        name="amount"
+                        pattern="([1-9]{1}|10)"
+                    >
+                </h2>
+    
+                <h2>เน้นการท่องเที่ยวแบบใด?</h2>
+                <div class="like">
+                    <input 
+                        type="checkbox"
+                        name="travel1"
+                        value="shopping"
+                    > ชอปปิ้ง
+                    <br>
+                    <input 
+                        type="checkbox"
+                        name="travel2"
+                        value="nature"
+                    > ธรรมชาติ
+                    <br>
+                    <input
+                        type="checkbox"
+                        name="travel3"
+                        value="sea"
+                    > ทะเล
+                    <br>
+                </div>
+            </div>
+
+            <h2>ยอมรับเงื่อนไขและข้อตกลง
+                <input 
+                    type="radio"
+                    name="agree"
+                    value="i_agree"
+                > I agree
+                <input 
+                    type="radio"
+                    name="agree"
+                    value="i_disagree"
+                > I disagree
+                <input 
+                    type="submit"
+                    name="submit"
+                    value="จอง"
+                >
+            </h2>
+
+        </form>
+    </div>
+
+
+</body>
+</html>

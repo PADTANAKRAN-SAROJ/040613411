@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        table{
+            width: 80%;
+        }
+        table, td {
+            text-align: left;
+            margin: auto;
+            border: 1px solid rgb(163, 163, 163);
+            border-collapse: collapse;
+            padding: 10px 20px;
+            height: 30px;
+        }
+        th{
+            text-align: center;
+            margin:  auto;
+            border: 1px solid rgb(163, 163, 163);
+            border-collapse: collapse;
+            padding: 10px 20px;
+            height: 30px;
+        }
+
+        input{
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        input:invalid{
+            border: 2px solid red;
+        }
+        li{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p> ข้อ 1 จงเขียนHTML สร้างฟอร์ม จากสลด์ <b>"ควรใช้ input type ใด?"</b></p>
+    <table>
+        <tr>
+            <th></th>
+            <th>ตัวอย่างข้อมูล</th>
+            <th>Input type?</th>
+        </tr>
+        <tr>
+            <th>1.</th>
+            <td>ชื่อเต็ม/ย่อของสาขาวิชา</td>
+            <td>
+                <form action="">
+                    <input 
+                        type="text"
+                        name="branch"
+                        placeholder="ชื่อเต็ม/ย่อของสาขาวิชา"
+                        pattern="[A-Za-z]{1,}"
+                    >
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <th>2.</th>
+            <td>จำนวนเงินที่จะโอน </td>
+            <td>
+                <form action="">
+                    <input 
+                        type="text"
+                        name="amount"
+                        placeholder="จำนวนเงินที่จะโอน"
+                        pattern="[1-9]{1}[0-9]{0,6}"
+                    >
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <th>3.</th>
+            <td>อาหารที่ชื่นชอบ 5 ชนิดที่ชื่นชอบจากมากไปน้อย</td>
+            <td>
+                <form action="">
+                    <ol>
+                        <li>
+                            <input 
+                                type="text"
+                                name="foodNo1"
+                                placeholder="อาหารที่ชื่นชอบ อันดับ 1"
+                                pattern="[A-Za-z]{1,}"
+                            >
+                        </li>
+                        <li>
+                            <input 
+                                type="text"
+                                name="foodNo2"
+                                placeholder="อาหารที่ชื่นชอบ อันดับ 2"
+                                pattern="[A-Za-z]{1,}"
+                            >
+                        </li>
+                        <li>
+                            <input 
+                                type="text"
+                                name="foodNo3"
+                                placeholder="อาหารที่ชื่นชอบ อันดับ 3"
+                                pattern="[A-Za-z]{1,}"
+                            >
+                        </li>
+                        <li>
+                            <input 
+                                type="text"
+                                name="foodNo4"
+                                placeholder="อาหารที่ชื่นชอบ อันดับ 4"
+                                pattern="[A-Za-z]{1,}"
+                            >
+                        </li>
+                        <li>
+                            <input 
+                                type="text"
+                                name="foodNo5"
+                                placeholder="อาหารที่ชื่นชอบ อันดับ 5"
+                                pattern="[A-Za-z]{1,}"
+                            >
+                        </li>
+                    </ol>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <th>4.</th>
+            <td>ค่าไฟฟ้า 3 เดือนที่ผ่านมา</td>
+            <td>                <form action="">
+                <ol>
+                    <li>
+                        <input 
+                            type="text"
+                            name="bill1"
+                            placeholder="ค่าไฟ 1 เดือนที่ผ่านมา"
+                            pattern="[1-9]{1}[0-9]{0,}"
+                        >
+                    </li>
+                    <li>
+                        <input 
+                            type="text"
+                            name="bill2"
+                            placeholder="ค่าไฟ 2 เดือนที่ผ่านมา"
+                            pattern="[1-9]{1}[0-9]{0,}"
+                        >
+                    </li>
+                    <li>
+                        <input 
+                            type="text"
+                            name="bill3"
+                            placeholder="ค่าไฟ 3 เดือนที่ผ่านมา"
+                            pattern="[1-9]{1}[0-9]{0,}"
+                        >
+                    </li>
+                </ol>
+            </form></td>
+        </tr>
+        <tr>
+            <th>5.</th>
+            <td>รหัสบัตรประชาชน</td>
+            <td>                        
+                <input 
+                    type="text"
+                    name="bill3"
+                    placeholder="รหัสบัตรประชาชน"
+                    pattern="[0-9]{13}"
+                >
+            </td>
+        </tr>
+        <tr>
+            <th>6.</th>
+            <td>ความพึงพอใจของหนังสือเล่มนี้</td>
+            <td>                
+                <form action="">
+                    <input 
+                        type="radio"
+                        name="levle"
+                        value="พอใจมาก"
+                        placeholder="ระดับความพอใจ"
+                    >พอใจมาก
+                    
+                    <input 
+                        type="radio"
+                        name="levle"
+                        value="พอใจ"
+                        placeholder="ระดับความพอใจ"
+                    >พอใจ
+                    
+                    <input 
+                        type="radio"
+                        name="levle"
+                        value="เฉยๆ"
+                        placeholder="ระดับความพอใจ"
+                    >เฉยๆ
+                    
+                    <input 
+                        type="radio"
+                        name="levle"
+                        value="ไม่พอใจ"
+                        placeholder="ระดับความพอใจ"
+                    >ไม่พอใจ
+
+                    <input 
+                        type="radio"
+                        name="levle"
+                        value="ไม่พอใจมาก"
+                        placeholder="ระดับความพอใจ"
+                    >ไม่พอใจมาก
+                    
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <th>7.</th>
+            <td>อาการป่วย</td>
+            <td>
+                <textarea 
+                    name="sick" 
+                    id="sick" 
+                    cols="60" 
+                    rows="5"
+                    placeholder="อาการป่วย"
+                    pattern="[A-Za-z0-9]{0,}"
+                    >
+                </textarea>
+            </td>
+        </tr>
+        <tr>
+            <th>8.</th>
+            <td>ในช่วง 3 เดือนที่ผ่านมา เคยได้รับวัคซีนหรือไม่</td>
+            <td>
+                <form action="">
+                    <input 
+                        type="checkbox"
+                        name="COVID_Vaccine"
+                        value="1month_ago"
+                        placeholder="1เดือนที่ผ่านมา"
+                    >1เดือนที่ผ่านมา
+                    
+                    <input 
+                        type="checkbox"
+                        name="COVID_Vaccine"
+                        value="2month_ago"
+                        placeholder="2เดือนที่ผ่านมา"
+                    >2 เดือนที่ผ่านมา
+                    
+                    <input 
+                        type="checkbox"
+                        name="COVID_Vaccine"
+                        value="3month_ago"
+                        placeholder="3เดือนที่ผ่านมา"
+                    >3 เดือนที่ผ่านมา
+                    
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <th>9.</th>
+            <td>รหัสผ่าน</td>
+            <td>                
+                <form action="">
+                    <input 
+                        type="password"
+                        name="password"
+                        placeholder="password"
+                        pattern="[A-Za-z0-9]{8,}"
+                    >
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <th>10.</th>
+            <td>เวลาเริ่มเข้าเรียนและสิ้นสุดการเรียน</td>
+            <td>
+                <form action="">
+                    เวลาเข้าเรียน
+                    <input 
+                        type="time"
+                        name="time"
+                        value="login_to_school"
+                        placeholder="เวลาเข้าเรียน"
+                    >
+                    <br>
+                    <br>
+                    เวลาเลิกเรียน
+                    <input 
+                        type="time"
+                        name="time_to_school"
+                        value="logout_to_school"
+                        placeholder="เวลาเลิกเรียน"
+                    >
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <th>11.</th>
+            <td>วันเวลาที่ต้องไปพบแพทย์</td>
+            <td>
+                <input 
+                    type="datetime-local"
+                    name="see_a_doctor"
+                    value="datetime_see_a_doctor"
+                    placeholder="วันเวลาไปหาหมอ"
+                    >
+            </td>
+        </tr>
+    </table>
+
+
+</body>
+</html>
