@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let student = [
+            {
+                fullname: 'นายตั้งใจ เรียนมาก',
+                age: 18,
+                year: 1,
+                gpa: 3.40,
+                help: true
+            },
+            {
+                fullname: 'นายส่งงาน ตลอดมา',
+                age: 19,
+                year: 2,
+                gpa: 3.00,
+                help: false
+            },
+            {
+                fullname: 'นางสาวใส่ใจ ดีงาม',
+                age: 20,
+                year: 3,
+                gpa: 2.90,
+                help: true
+            }
+        ]
+
+        let d = new Date();
+        for (let i = 0; i < student.length; i++) {
+            let y = d.getFullYear()+543 - student[i].age
+            // console.log(student[i])
+            if(student[i].help){
+                if(student[i].year>=2){//ปี2++
+                    if(student[i].gpa>=2.75){//ผ่าน
+                        console.log(student[i].fullname+" เกิดเมื่อปี "+y +" ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์ และยังช่วยงานภาควิชาด้วย")
+                    }else{//ไม่ผ่าน
+                        console.log(student[i].fullname+" เกิดเมื่อปี "+y +" ไม่ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์")
+                    }
+
+                }else{//ไม่จำกัดปี
+                    if(student[i].gpa>=3.20){//ผ่าน
+                        console.log(student[i].fullname+" เกิดเมื่อปี "+y +" ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์ และยังช่วยงานภาควิชาด้วย")
+                    }else{//ไม่ผ่าน
+                        console.log(student[i].fullname+" เกิดเมื่อปี "+y +" ไม่ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์")
+                    }
+
+                }
+            }else{
+                if(student[i].year>=2){//ปี2++
+                    if(student[i].gpa>=2.75){//ผ่านแค่เกรด
+                        console.log(student[i].fullname+" เกิดเมื่อปี "+y +" ไม่ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์ แต่ยังไม่เคยช่วยงานภาควิชา")
+                    }else{//ไม่ผ่าน
+                        console.log(student[i].fullname+" เกิดเมื่อปี "+y +" ไม่ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์ และยังไม่ได้ช่วยงานภาควิชา")
+                    }
+
+                }else{//ไม่จำกัดปี
+                    if(student[i].gpa>=3.20){//ผ่านแค่เกรด
+                        console.log(student[i].fullname+" เกิดเมื่อปี "+y +" ไม่ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์ แต่ยังไม่เคยช่วยงานภาควิชา")
+                    }else{//ไม่ผ่าน
+                        console.log(student[i].fullname+" เกิดเมื่อปี "+y +" ไม่ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์ และยังไม่ได้ช่วยงานภาควิชา")
+                    }
+
+                }
+            }
+        }
+
+        console.log("ให้แสดงสรุปรายชื่อนักศึกษาที่ได้รับทุน ระบุเหตุผล ตามชั้นปี 1-4 ตามลำดับ ")
+        for (let i = 1; i <= 4 ; i++) {
+            console.log("ชั้นปีที่ "+i); 
+            let sum = 0;
+            for (let j = 0; j < student.length; j++) {
+                if (student[j].year === i) {
+                let y = d.getFullYear()+543 - student[j].age
+                    if(student[j].help){
+                        if(student[j].year>=2){//ปี2++
+                            if(student[j].gpa>=2.75){//ผ่าน
+                                console.log(student[j].fullname+"เนื่องจากเกรดเฉลี่ยถึงเกณฑ์ และยังช่วยงานภาควิชาด้วย")
+                            }
+                        }else{//ไม่จำกัดปี
+                            if(student[j].gpa>=3.20){//ผ่าน
+                                console.log(student[j].fullname+"เนื่องจากเกรดเฉลี่ยถึงเกณฑ์ และยังช่วยงานภาควิชาด้วย")
+                            }
+
+                        }
+                    }
+                } 
+            }
+            if(sum==0){
+                console.log("ไม่มี")
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

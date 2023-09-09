@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function changeTextColor(inputId) {
+    var input = document.getElementById(inputId);
+    if(input.value == ""){
+        input.style.color = "black";
+    }else{
+        input.style.color = "green";
+    }
+    
+}
+</script>
+</head>
+<body>
+
+<form>
+    Name: <input type="text" id="text1" onblur="changeTextColor('text1')"> <br>
+    Age: <input type="text" id="text2" onblur="changeTextColor('text2')"> <br>
+    Birthdate: <input type="text" id="text3" onblur="changeTextColor('text3')"> <br>
+</form>
+
+</body>
+</html>
