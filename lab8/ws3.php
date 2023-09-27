@@ -5,8 +5,6 @@
         <?php
             $stmt = $pdo->prepare("SELECT * FROM member");
             $stmt->execute();
-            
-            $i = 1 ;
 
             while ($row = $stmt->fetch()) {
             ?>
@@ -14,14 +12,9 @@
             ที่อยู่ : <?=$row ["address"]?><br>
             อีเมล : <?=$row ["email"]?><br>
             
-            <a href="ws5-detail.php?username=<?=$row["username"]?>">
-                <img src='member_photo/<?=$i?>.jpg' width='100'>
-            </a>
-            <br>
-            
-            <?php 
-                $i++;
-            ?>
+            <img src='member_photo/<?=$row["username"]?>.jpg' width='100'>
+            <br><br>
+
         <?php } 
         ?>
     </body>

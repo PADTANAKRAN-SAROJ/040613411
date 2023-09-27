@@ -1,6 +1,23 @@
 <?php
 include "connect.php";
 
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_FILES["image"])) {
+            // ใช้ username เป็นชื่อไฟล์
+            $username = $_POST["username"];
+            $targetDir = "member_photo/";
+            $extension = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
+            $targetFile = $targetDir . $username . "." . $extension;
+
+            if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+                echo "รูปภาพถูกอัปโหลดเรียบร้อยแล้ว";
+            } else {
+                echo "เกิดข้อผิดพลาดในการอัปโหลดรูปภาพ";
+            }
+        } else {
+            echo "กรุณาเลือกไฟล์รูปภาพ";
+        }
+    }
 
     $stmt = $pdo->prepare("UPDATE member SET name=?, address=?, mobile=?, email=? WHERE username=?");
     $stmt->bindParam(1, $_POST["name"]);

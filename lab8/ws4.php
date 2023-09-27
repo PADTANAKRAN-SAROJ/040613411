@@ -15,20 +15,14 @@
             ?>
 
             <?php 
-            $i = 1 ;
             while ($row = $stmt->fetch()) : ?>
                 <div style="padding: 15px; text-align: center">
-                    <img  src='member_photo/<?=$i?>.jpg' width='100'><br>
+                    <img  src='member_photo/<?=$row["username"]?>.jpg' width='100'><br>
                     ชื่อ : <?=$row ["name"]?><br> 
                     ที่อยู่ : <?=$row ["address"]?><br>
                     เบอร์ : <?=$row ["mobile"]?><br> 
                     อีเมล : <?=$row ["email"]?><br> 
                 </div>
-            <?php 
-                $i++;
-            ?>
-
-
 
             <?php endwhile; ?>
         </div>
